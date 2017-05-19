@@ -1,0 +1,69 @@
+
+
+            <!-- FEATURED INFORMATION -->
+<div class="featured w3-animate-bottom" id="featured-div">
+    <div id="featured-header">
+        <h1>FEATURED</h1>
+        <ul class="featured-header-icons">
+            <li>
+                <button class="featured-grid">
+                    <img id="button-icon-grid" src="img/icon_grid-black.png" height="100%" width="100%">
+                </button>
+            </li>
+
+            <li>
+                <button class="featured-list">
+                    <img id="button-icon-list"
+                        src="img/icon-list.png" height="100%" width="100%">
+                </button>
+            </li>
+        </ul>
+    </div>
+
+<div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+<div id="featured-list-container" ng-show="lists">
+    <ul class="featured-grid">
+        <li ng-repeat="(id, list) in lists">
+            <a ng-href="#/topics/{{ list.order }}">
+              <!-- <div  class="featured-grid-thumbnail" style="background-image: url({{ list.thumbnail }});background-size:cover;">  </div> -->
+              <img  class="featured-grid-thumbnail" ng-if="list.thumbnail" ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}" style="width:100%;height:100%;">
+            </a>
+            <a ng-href="#/topics/{{ list.order }}"><div class="featured-grid-title">{{ list.title }}</div></a>
+            <a class="featured-grid-item-numbers" ng-href="#/topics/{{ list.order }}">Browse {{ list.numberOfItems}} items</a>
+            <div class="featured-grid-description">
+                <p><div ng-if="list.description" ng-bind-html="list.description"></div> </p>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+<script src="js/grid-list-view.js"></script>
+
+    <div id="featured-footer">
+        <div id="featured-footer-main" ng-bind-html="footer">
+
+        </div>
+        <div id="featured-footer-secondary">
+            <a href="http://trove.nla.gov.au/"><img src="img/icon_logo.png"/></a>
+            <h3>Powered by <a href="http://trove.nla.gov.au/">Trove</a></h3>
+        </div>
+    </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('.resources').css({
+      'display': 'none',
+    });
+    $('.featured').css({
+      'display': 'inline',
+    });
+    $('.base-nav li:nth-child(2)').css({
+      'opacity': '1',
+    });
+    $('.base-nav li:nth-child(3)').css({
+      'opacity': '0.5',
+    });
+    $('.grid-trigger').attr('href','/#/');
+  });
+</script>
