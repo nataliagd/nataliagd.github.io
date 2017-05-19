@@ -155,7 +155,7 @@ main {
 .popup-description-container {
     z-index: 20;
     position: fixed;
-    height: 480px;
+    height: 460px;
     width: 80%;
     margin:13% 0 0 10%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -193,7 +193,7 @@ main {
     font-size: 13.5pt !important;
     font-family: Gilroy !important;
     font-weight: 300;
-    line-height: 25px;
+    line-height: 23px;
     -webkit-column-count: 2; /* Chrome, Safari, Opera */
     -moz-column-count: 2; /* Firefox */
     column-count: 2;
@@ -203,7 +203,7 @@ main {
 .popup-description-container #ex_high {
     float: right;
     width: 16%;
-    margin:120px 70px 0 0px;
+    margin:120px 75px 0 0px;
     font-size: 25pt;
     font-family: Gilroy !important;
     font-weight: 800;
@@ -278,7 +278,7 @@ main {
     width: 100%;
     opacity: 0;
     visibility: hidden;
-    z-index: 10;
+    z-index: 100;
     background-color: #ffffff;
 }
 
@@ -386,14 +386,16 @@ main {
 #featured-footer,#resources-footer{
 	margin-top:200px !important;
 }
-
+		.tertiary-container {
+			height: 900px !important;
+		}
 }
 .highSlides img, .itemSlides img
  {
     height: 380px;
     width: 65%;
     margin-left: 17.5%;
-    margin-top: 8% !important;
+    margin-top: 12% !important;
     object-fit:cover;
      object-position: center;
 }
@@ -408,8 +410,8 @@ main {
     font-size: 15pt;
     line-height: 40px;
     margin-left: -25px;
-		text-align: center;
-		vertical-align: middle;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .prev img, .next img {
@@ -553,12 +555,13 @@ main {
 }
 .base-nav li:nth-child(1), .base-nav li:nth-child(1) a {
     float: left;
-    font-size: 30pt;
+    font-size: 27pt;
     font-family: Gilroy !important;
     font-weight: 800;
     text-transform: uppercase;
     line-height: 100px;
     margin-left: 10px;
+    margin-top: 1px;
 }
 .base-nav li:nth-child(2), .base-nav li:nth-child(3){
     float: left;
@@ -621,7 +624,6 @@ main {
     z-index: 9;
 		overflow: scroll;
 -webkit-overflow-scrolling: touch;
-
 }
 
 .resources {
@@ -655,7 +657,7 @@ main {
     float: right;
     width: 30%;
     list-style-type: none;
-    margin: 30px 35px 0 0px;
+    margin: 30px -85px 0 0px;
     padding: 0;
     overflow: hidden;
     height: 100%;
@@ -668,9 +670,9 @@ button {
 
 #featured-header li, #resources-header li {
     display: inline-block;
-    margin: 0 0px 0 50px;
-    height: 50px;
-    width: 50px;
+    margin: 0 0px 0 0px;
+    height: 65px;
+    width: 65px;
 }
 
 #featured-header li:nth-child(1), #resources-header li:nth-child(1) {
@@ -680,6 +682,7 @@ button {
 
 #featured-header li:nth-child(2), #resources-header li:nth-child(2) {
     margin-top: 2px;
+    position: absolute;
 }
 
 #resources-secondary {
@@ -781,6 +784,7 @@ button {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .featured-grid .featured-grid-title {
@@ -955,7 +959,7 @@ button {
 }
 
 .secondary-container {
-    position: relative;
+    position: fixed;
     width: 100%;
     height: 622px;
     margin: 105px 0 0 0;
@@ -998,6 +1002,7 @@ button {
 .secondary-container ul {
     list-style: none;
     width: 100%;
+    overflow: scroll;
 }
 
 .secondary-container .secondary-list li {
@@ -1005,6 +1010,7 @@ button {
     margin: 1.5% 0 0 0;
     height: 375px;
     background-color: #dedede;
+    overflow: scroll;
 }
 
 .secondary-list .secondary-item-title {
@@ -1133,7 +1139,7 @@ button {
     font-size: 15pt;
     font-weight: 800;
     line-height: 35px;
-    margin-top: -40px;
+    margin-top: -35px;
 }
 
 #item-header h3 {
@@ -1148,7 +1154,7 @@ button {
 
 /* Slideshow container */
 .item-slider-container {
-    height: 100% !important;
+    /*height: 100% !important;*/
     width: 90%;
     margin: 20px 0 0 5%;
     position: fixed;
@@ -1214,12 +1220,12 @@ button {
 }
 
 #list-item-links {
-	 position: fixed;
+	 position: absolute;
     height: 100px;
-    width: 98%;
+    /*width: 5%;*/
     margin-left: 2%;
     /*margin-top: 400px;*/
-    top: 90%;
+    bottom: 10px;
 }
 
 #list-item-links h1 a{
