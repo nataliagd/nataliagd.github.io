@@ -1,0 +1,101 @@
+<!--    HOME SCREEN AND IMAGE SLIDER    -->
+<div id="main-div">
+<main>
+<div class="slideshow-container">
+
+<div id="header">
+    <ul>
+        <li><a href="#0" class="popup-description-trigger"><img border="0" alt="Information icon" src="img/icon_info.png" width="100%" height="100%" align="middle" style="z-index:100 !important;">INFORMATION</a></li>
+
+        <li><a href="#0" class="popup-highlights-trigger">EXHIBITION HIGHLIGHTS<img border="0" alt="Exhibtiion Highlights icon" src="img/icon_museum.png" width="100%" height="100%" align="middle" style="z-index:100 !important;"></a></li>
+    </ul>
+</div>
+
+<div class="homeSlides" ng-repeat="backgroundimage in backgroundimages">
+    <img src="{{backgroundimage.innerHTML}}" height="100%" width="100%"/>
+    <div class="slide-caption"></div>
+</div>
+
+
+</div>
+
+<div style="text-align:center">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
+
+<script src="js/popup_main.js"></script>
+<script type="text/javascript" src="js/slideshow.js"></script>
+</main>
+
+<!--    HOME SCREEN AND IMAGE SLIDER    -->
+
+
+<!--    POP UP FOR THE EXHIBITION DESCRIPTION    -->
+<div class="popup-description" role="alert">
+
+<div class="popup-description-container" >
+    <h1>{{exhibition}}</h1>
+    <p>{{description}}</p>
+        <div id="ex_high"><a href="#" class="exhigh-trigger">
+            <center>{{highlights}}</center>
+            <img src="img/icon_arrow.png" height="40px" width="84px"></a>
+        </div>
+<img class="popup-description-close" src="img/icon_close.png" height="100%" width="100%"/>
+</div>
+</div>
+
+
+<!-- POPUP FOR EXHIBITION HIGHLIGHTS BELOW -->
+<div class="popup-highlights" role="alert">
+<div class="popup-highlights-container">
+    <div id="highlights-header">
+        <div id="highlights-title">HIGHLIGHTS</div>
+        <img class="popup-highlights-close" src="img/icon_close.png" height="100%" width="100%"/>
+    </div>
+
+<!-- ADD THE YOUR HIGHLIGHT IMAGES AND DESCRIPTIONS HERE -->
+<div class="highlights-slider-container">
+  <div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+  <div id="highlights-slider" ng-show="lists">
+    <div class="highSlides" ng-repeat="highimage in highlightimages">
+      <div class="numbertext">{{$index+1}} / {{highlightimages.length}}</div>
+      <img ng-src="{{ highimage.innerHTML }}" height="100%" width="100%">
+      <div class="highSlides-caption">{{highlightcaptions[$index]}}</div>
+    </div>
+
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)"><img src="img/icon_previous.png" /> <span style="vertical-align: top;display: inline-block;line-height: normal;">previous</span></a>
+  <a class="next" onclick="plusSlides(1)"><span style="vertical-align: top;display: inline-block;line-height: normal;">next </span><img src="img/icon_next.png"/></a>
+</div>
+
+<div style="text-align:center">
+<span class="dot" ng-repeat="highimage in highlightimages" ng-click="currentSlide($index+1)"></span>
+</div>
+    <script src="js/high_slideshow.js"></script>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('.resources').css({
+      'display': 'none',
+    });
+    $('.featured').css({
+      'display': 'none',
+    });
+    $('.base-nav li:nth-child(2)').css({
+      'opacity': '0.5',
+    });
+    $('.base-nav li:nth-child(3)').css({
+      'opacity': '0.5',
+    });
+  if (((navigator.userAgent.match(/OS X.*Safari/))|| (navigator.userAgent.match(/iPad/))) && ! navigator.userAgent.match(/Chrome/)) {
+     document.body.className += 'safari';
+  }
+  $('.grid-trigger').attr('href','/#/topics');
+});
+</script>
+</div>
