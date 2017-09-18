@@ -194,9 +194,9 @@ main {
     font-family: Gilroy !important;
     font-weight: 300;
     line-height: 23px;
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
 
 }
 
